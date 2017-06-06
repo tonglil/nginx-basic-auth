@@ -17,15 +17,17 @@ Supports the following environment variables for configuration (with defaults):
 ## Sample Configuration
 Given the following configuration:
 
->LISTEN_PORT=8080
->AUTH_REALM=Restricted
->HTPASSWD_FILE=/etc/nginx/conf.d/auth.htpasswd
->HTPASSWD=someuser:$some/hash.
->FORWARD_PROTOCOL=http
->FORWARD_PORT=80
->FORWARD_HOST=localhost
->then NGINX will be configured like this:
+```
+LISTEN_PORT=8080
+AUTH_REALM=Restricted
+HTPASSWD_FILE=/etc/nginx/conf.d/auth.htpasswd
+HTPASSWD=someuser:$some/hash.
+FORWARD_PROTOCOL=http
+FORWARD_PORT=80
+FORWARD_HOST=localhost
+```
 
+Then NGINX will be configured like this:
 Contents of /etc/nginx/conf.d/auth.conf:
 ```
 server {
