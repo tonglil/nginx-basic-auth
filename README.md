@@ -27,23 +27,24 @@ Given the following configuration:
 >then NGINX will be configured like this:
 
 Contents of /etc/nginx/conf.d/auth.conf:
+```
+server {
+    listen 8080 default_server;
 
->server {
->    listen 8080 default_server;
->
->    location / {
->        # basic auth
->        auth_basic           "Restricted";
->        auth_basic_user_file /etc/nginx/conf.d/auth.htpasswd;
->
->        # proxy pass
->        proxy_pass         http://localhost:80;
->        proxy_read_timeout 900;
->
->        # forward headers
->        proxy_set_header Host $host;
->        proxy_set_header X-Real-IP $remote_addr;
->        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
->        proxy_set_header X-Forwarded-Proto $scheme;
->    }
->}
+    location / {
+        # basic auth
+        auth_basic           "Restricted";
+        auth_basic_user_file /etc/nginx/conf.d/auth.htpasswd;
+
+        # proxy pass
+        proxy_pass         http://localhost:80;
+        proxy_read_timeout 900;
+
+        # forward headers
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
