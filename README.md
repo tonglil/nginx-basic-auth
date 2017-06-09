@@ -1,5 +1,6 @@
-# docker-kibana-dashboard-importer
-Simple docker container wrapped for the beats script to `import_dashboards` into Kibana
+# NGINX Basic Auth Proxy Container
+NGINX container pre-configured to act as a basic auth proxy.
+Simple way to protect HTTP services that don't have any authentication when OAuth or anything similar is to much.
 
 ## Configuration
 Supports the following environment variables for configuration (with defaults):
