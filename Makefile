@@ -1,7 +1,7 @@
 default: build
 
 docker-image = dhswt/nginx-basic-auth
-docker-tag = 1.2
+docker-tag = 1.3
 
 build:
 	docker build --squash \
