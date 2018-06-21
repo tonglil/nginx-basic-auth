@@ -9,10 +9,12 @@ ENV LISTEN_PORT=80 \
 	FORWARD_PORT=8080 \
     FORWARD_HOST="example.localhost"
 
+ADD start.sh /
+
 RUN apk add --no-cache gettext \
-&&	rm /etc/nginx/conf.d/default.conf
+&&	rm /etc/nginx/conf.d/default.conf \
+&&  chmod +x /start.sh
 
 ADD auth.conf auth.htpasswd /etc/nginx/conf.d/
-ADD start.sh /
 
 CMD ["/start.sh"]

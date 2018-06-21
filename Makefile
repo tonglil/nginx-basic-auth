@@ -1,7 +1,7 @@
 default: build
 
-docker-image = dhswt/nginx-basic-auth
-docker-tag = 1.3
+docker-image = registry.gitlab.com/dhswt/docker/nginx-basic-auth
+docker-tag = dev
 
 build:
 	docker build --squash \
