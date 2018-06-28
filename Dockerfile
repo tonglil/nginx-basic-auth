@@ -15,6 +15,6 @@ RUN apk add --no-cache gettext \
 &&	rm /etc/nginx/conf.d/default.conf \
 &&  chmod +x /start.sh
 
-ADD auth.conf auth.htpasswd /etc/nginx/conf.d/
+ADD auth.conf.tpl auth.htpasswd /etc/nginx/conf.d/
 
 CMD ["/start.sh"]

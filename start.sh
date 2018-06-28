@@ -13,7 +13,7 @@ echo ""
 
 # process config for this container
 export ESCAPE_DOLLAR='$'
-envsubst < /etc/nginx/conf.d/auth.conf > /etc/nginx/conf.d/auth.conf
+envsubst < /etc/nginx/conf.d/auth.conf.tpl > /etc/nginx/conf.d/auth.conf
 
 # print config
 echo "# Running with NGINX auth.conf:"
