@@ -1,9 +1,9 @@
 FROM nginx:alpine
-LABEL maintainer "admin@dhswt.de"
 
 ENV LISTEN_PORT=80 \
     AUTH_REALM="Restricted" \
     HTPASSWD_FILE="/etc/nginx/conf.d/auth.htpasswd" \
+    AUTH_CONF="/etc/nginx/auth.conf" \
     FORWARD_PROTOCOL="http" \
     FORWARD_PORT=8080 \
     FORWARD_HOST="localhost"
@@ -14,6 +14,10 @@ RUN apk add --no-cache gettext \
     && rm /etc/nginx/conf.d/default.conf \
     && chmod +x /start.sh
 
-ADD auth.conf.tpl auth.htpasswd /etc/nginx/conf.d/
+RUN mkdir -p /etc/nginx/tpl
+
+ADD config.conf.tpl proxy.conf.tpl basic.conf.tpl /etc/nginx/tpl/
+ADD auth.conf /etc/nginx/
+ADD auth.htpasswd /etc/nginx/conf.d/
 
 CMD ["/start.sh"]
