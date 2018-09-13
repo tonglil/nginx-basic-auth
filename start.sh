@@ -5,7 +5,6 @@ echo "# Configuration:"
 echo "LISTEN_PORT=${LISTEN_PORT}"
 echo "AUTH_REALM=${AUTH_REALM}"
 echo "HTPASSWD_FILE=${HTPASSWD_FILE}"
-echo "HTPASSWD=${HTPASSWD}"
 echo "FORWARD_PROTOCOL=${FORWARD_PROTOCOL}"
 echo "FORWARD_PORT=${FORWARD_PORT}"
 echo "FORWARD_HOST=${FORWARD_HOST}"
@@ -19,9 +18,6 @@ envsubst < /etc/nginx/conf.d/auth.conf.tpl > /etc/nginx/conf.d/auth.conf
 echo "# Running with NGINX auth.conf:"
 cat /etc/nginx/conf.d/auth.conf
 echo ""
-
-# append optional contents of HTPASSWD variable to auth file
-echo $HTPASSWD >> $HTPASSWD_FILE
 
 # run nginx in foreground
 nginx -g "daemon off;"

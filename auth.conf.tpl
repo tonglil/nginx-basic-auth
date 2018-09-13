@@ -9,7 +9,7 @@ server {
         # proxy pass
         proxy_pass         ${FORWARD_PROTOCOL}://${FORWARD_HOST}:${FORWARD_PORT};
         proxy_read_timeout 900;
-        
+
         # forward headers
         proxy_set_header Host ${ESCAPE_DOLLAR}host;
         proxy_set_header X-Real-IP ${ESCAPE_DOLLAR}remote_addr;
