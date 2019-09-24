@@ -31,7 +31,7 @@ Supports the following environment variables for configuration (with defaults):
 | FORWARD_PORT | 8080 |  |
 | FORWARD_HOST | "localhost" |  |
 
-The default `AUTH_CONF` enables basic auth against all paths.
+The default `AUTH_CONF` file enables basic auth against all paths.
 This option is an escape hatch more complex configurations.
 
 Mount your own configuration to enable basic auth for specify paths using the `include` directive.
