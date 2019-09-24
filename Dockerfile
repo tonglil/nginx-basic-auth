@@ -18,6 +18,6 @@ RUN mkdir -p /etc/nginx/tpl
 
 ADD config.conf.tpl proxy.conf.tpl basic.conf.tpl /etc/nginx/tpl/
 ADD auth.conf /etc/nginx/
-ADD auth.htpasswd /etc/nginx/conf.d/
+ADD auth.htpasswd.dist /etc/nginx/conf.d/auth.htpasswd
 
 CMD ["/start.sh"]

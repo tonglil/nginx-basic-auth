@@ -8,7 +8,7 @@ Simple way to protect HTTP services that don't have any authentication when OAut
 1. Generate your own `HTPASSWD_FILE`:
 
     ```
-    htpasswd auth.htpasswd username
+    htpasswd -c auth.htpasswd username
     ```
 
 1. Run the container with the file:
