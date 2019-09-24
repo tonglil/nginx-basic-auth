@@ -3,6 +3,20 @@
 NGINX container pre-configured to act as a basic auth proxy.
 Simple way to protect HTTP services that don't have any authentication when OAuth or anything similar is too much.
 
+## Quickstart
+
+1. Generate your own `HTPASSWD_FILE`:
+
+    ```
+    htpasswd auth.htpasswd username
+    ```
+
+1. Run the container with the file:
+
+    ```
+    docker run -it -v $(pwd)/auth.htpasswd:/etc/nginx/conf.d/auth.htpasswd tonglil/nginx-basic-auth
+    ```
+
 ## Configuration
 
 Supports the following environment variables for configuration (with defaults):
